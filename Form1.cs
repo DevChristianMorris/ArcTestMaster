@@ -4,6 +4,7 @@ using System.Windows.Forms;
 using ArcTest.DiceRolls;
 using System.Net.Http;
 using JR.Utils.GUI.Forms;
+using System.Linq;
 namespace ArcTest
 {
     public partial class Form1 : Form
@@ -26,9 +27,22 @@ namespace ArcTest
                 var rolls = await response.Content.ReadAsAsync<DiceRolled>();
 
                 StringBuilder resultText = new StringBuilder();
+                int[] diceValues = rolls.Dice.ToArray(); // Convert to an array for easier manipulation
+                int highest = diceValues.Max();
+                int lowest = diceValues.Min();
+
                 for (int i = 0; i < rolls.Dice.Count; i++)
                 {
-                    resultText.AppendLine($"Roll {i + 1}:  {rolls.Dice[i]} {" "}");
+                    string rollText = $"Roll {i + 1}: {rolls.Dice[i]}";
+                    if (rolls.Dice[i] == highest)
+                    {
+                        rollText += " (Highest)";
+                    }
+                    else if (rolls.Dice[i] == lowest)
+                    {
+                        rollText += " (Lowest)";
+                    }
+                    resultText.AppendLine(rollText);
                 }
 
                 FlexibleMessageBox.Show(resultText.ToString(), "Dice Rolls");
