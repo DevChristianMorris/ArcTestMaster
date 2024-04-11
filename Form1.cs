@@ -27,7 +27,7 @@ namespace ArcTest
                 var rolls = await response.Content.ReadAsAsync<DiceRolled>();
 
                 StringBuilder resultText = new StringBuilder();
-                int[] diceValues = rolls.Dice.ToArray(); // Convert to an array for easier manipulation
+                int[] diceValues = rolls.Dice.ToArray();
                 int highest = diceValues.Max();
                 int lowest = diceValues.Min();
 
