@@ -132,11 +132,11 @@
             // 
             this.label3.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(285, 170);
+            this.label3.Location = new System.Drawing.Point(273, 170);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(81, 13);
+            this.label3.Size = new System.Drawing.Size(105, 13);
             this.label3.TabIndex = 13;
-            this.label3.Text = "Number of Dice";
+            this.label3.Text = "No. of Dice (Max 10)";
             // 
             // textBoxPreviousResults
             // 

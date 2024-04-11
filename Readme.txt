@@ -1,1 +1,1 @@
-Install NuGet package "Microsoft.AspNet.WebApi.Client" to your project."
+Install NuGet package "Microsoft.AspNet.WebApi.Client" to your project.
